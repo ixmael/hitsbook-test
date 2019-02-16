@@ -30,7 +30,7 @@ yarn run build:dev
 
 ### server-app
 
-La aplicación fue desarrollada con (Python 3)[https://www.python.org/] y [Django](https://www.djangoproject.com/).
+La aplicación fue desarrollada con [Python 3](https://www.python.org/) y [Django](https://www.djangoproject.com/).
 
 Dentro del directorio *project/server-app/* la forma habitual de trabajar en desarrollo es con los siguientes comandos:
 ```bash
