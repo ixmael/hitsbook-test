@@ -1,0 +1,14 @@
+{% extends 'tasksmanager/base.html' %}
+
+{% block content %}
+<div id="tasksmanager">
+  <div class="task-detail">
+    Detalle de la tarea
+  </div>
+  <form method="post">
+    <p>Are you sure you want to delete "{{ object.title }}"?</p>
+    <input type="submit" value="Confirm">
+    {% csrf_token %}
+  </form>
+</div>
+{% endblock content %}

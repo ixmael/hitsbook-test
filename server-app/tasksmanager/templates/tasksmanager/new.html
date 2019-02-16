@@ -1,0 +1,21 @@
+{% extends 'tasksmanager/base.html' %}
+
+{% block content %}
+<div id="tasksmanager">
+  NUEVA TAREA
+  
+  <form method="post">
+    {{form}}
+    <div class="">
+      <button type="submit">
+        Guardar
+      </button>
+      <button>
+        Cancelar
+      </button>
+    </div>
+
+    {% csrf_token %}
+  </form>
+</div>
+{% endblock content %}
