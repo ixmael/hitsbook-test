@@ -11,18 +11,44 @@ Para este proyecto se agregaron algunos paths para lograr integrar el desarrollo
 * **client-web**: path del proyecto web
 * **server-app**: aplicación django.
 
-## client-web
+## Desarrollo
+
+### client-web
+
+Para trabajar con este proyecto se requiere instalar [Nodejs](https://nodejs.org/) y *npm*. En este proyecto se usó [Yarn](https://yarnpkg.com/).
+
 El path *client-web* contiene el proyecto web (css, javascript, fuentes, etc.) para la aplicación. Utiliza *webpack* para generar los paquetes estáticos.
 
-**Desarrollo**
-Para el desarrollo la forma de operar es con la ejecución de:
+La forma habitual de trabajar es ejecutando los siguientes comandos dentro del directorio *project/client-web/*:
 ```bash
+# Instalar las dependencias
+yarn install
+
+# Generar los archivos estáticos
 yarn run build:dev
 ```
 
-**Production**
+### server-app
+
+La aplicación fue desarrollada con (Python 3)[https://www.python.org/] y [Django](https://www.djangoproject.com/).
+
+Dentro del directorio *project/server-app/* la forma habitual de trabajar en desarrollo es con los siguientes comandos:
+```bash
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Generar la base de datos
+python manager.py makemigrations
+
+# Iniciar el servidor
+python manager.py runserver
+```
+
+## Desarrollo
+
 Para el despliegue en producción se ejecuta:
 ```bash
+# Generar los archivos estáticos para el ambiente productivo
 yarn run build
 ```
 
