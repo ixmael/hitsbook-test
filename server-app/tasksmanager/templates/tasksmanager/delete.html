@@ -2,12 +2,20 @@
 
 {% block content %}
 <div id="tasksmanager">
-  <div class="task-detail">
-    Detalle de la tarea
-  </div>
   <form method="post">
-    <p>Are you sure you want to delete "{{ object.title }}"?</p>
-    <input type="submit" value="Confirm">
+    <legend>Eliminar tarea</legend>
+    <div>
+      <div>Título: {{task.title}}</div>
+      <div>Creada: {{task.created_at|date:'Y-m-d H:i'}}</div>
+      <div>Estado: {{task.status}}</div>
+    </div>
+    <p>¿Desea eliminar la tarea?</p>
+    <div class="form-actions">
+      <a href="{% url 'tasksmanager:home' %}" class="btn btn-secondary btn-lg">
+        Cancelar
+      </a>
+      <input type="submit" class="btn btn-success btn-lg" value="Confirm">
+    </div>
     {% csrf_token %}
   </form>
 </div>

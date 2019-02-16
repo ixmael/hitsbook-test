@@ -3,3 +3,18 @@
 {% block title %}
 Listado
 {% endblock title %}
+
+{% block header %}
+<nav class="navbar static-top">
+    <div class="container align-items-center justify-content-center">
+        <a class="navbar-brand" href="{% url 'taskslist:home' %}">hitsbook</a>
+    </div>
+</nav>
+<div class="tool">
+  <div class="container">
+    <a class="btn btn-primary btn-lg tasks-manager" href="{% url 'tasksmanager:home' %}" alt="Administrar tareas">
+      <i class="fas fa-list"></i> Administrar tareas
+    </a>
+  </div>
+</div>
+{% endblock header %}

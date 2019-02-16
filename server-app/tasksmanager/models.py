@@ -2,7 +2,9 @@ from django.db import models
 
 STATUSES = (
     ('created', 'creada'),
-    ('deleted', 'eliminada'),
+    ('revised', 'revisada'),
+    ('marked', 'marcada'),
+    ('deleted', 'deleted'),
 )
 
 class Task(models.Model):

@@ -3,33 +3,43 @@
 {% block content %}
 <div id="tasksmanager">
   <div class="tool">
-    <a href="{% url 'tasksmanager:new' %}">Agregar una tarea</a>
+    <a class="btn btn-primary btn-lg add-task" href="{% url 'tasksmanager:new' %}">
+        <i class="fas fa-plus"></i> Agregar una tarea
+    </a>
   </div>
+
   <div class="list">
     {% if tasks %}
       <ul>
         {% for task in tasks %}
-        <li>
-          <div>
-            {{task.title}}
-          </div>
-          <div>
-            {{task.created_at}}
-          </div>
-          <div>
-            {{task.status}}
-          </div>
-          <div>
-            <a href="{% url 'tasksmanager:edit' task.id %}">Editar</a>
-          </div>
-          <div>
-              <a href="{% url 'tasksmanager:delete' task.id %}">Eliminar</a>
+        <li class="card border-primary task-{{task.status}}">
+            <div class="card-body text-primary">
+              <p>{{task.title}}</p>
+
+              <p>
+                {{task.created_at|date:'Y-m-d H:i'}}
+              </p>
+              
+              <p>
+                {{task.status}}
+              </p>
+
+              <div>
+                  <a class="btn" href="{% url 'tasksmanager:edit' task.id %}" alt="Editar">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <a class="btn" href="{% url 'tasksmanager:delete' task.id %}" alt="Eliminar">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+              </div>
             </div>
         </li>
         {% endfor %}
       </ul>
     {% else %}
-      <div>No hay tareas</div>
+      <div class="alert alert-danger" role="alert">
+        No hay tareas
+      </div>
     {% endif %}
   </div>
 </div>

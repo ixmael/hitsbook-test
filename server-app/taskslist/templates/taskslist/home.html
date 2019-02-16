@@ -2,28 +2,24 @@
 
 {% block content %}
 <div id="tasksmanager">
-    <div class="tool">
-      <a href="{% url 'tasksmanager:new' %}">Agregar una tarea</a>
-    </div>
     <div class="list">
       {% if tasks %}
         <ul>
           {% for task in tasks %}
-          <li>
-            <div>
-              {{task.title}}
-            </div>
-            <div>
-              {{task.created_at}}
-            </div>
-            <div>
-              {{task.status}}
-            </div>
+          <li class="card border-primary task-{{task.status}}">
+              <div class="card-body text-primary">
+                {{task.title}}
+              </div>
+              <div class="card-footer text-muted">
+                  {{task.created_at|date:'Y-m-d H:i'}}
+              </div>
           </li>
           {% endfor %}
         </ul>
       {% else %}
-        <div>No hay tareas</div>
+        <div class="alert alert-danger" role="alert">
+          No hay tareas
+        </div>
       {% endif %}
     </div>
   </div>
