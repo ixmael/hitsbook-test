@@ -1,0 +1,57 @@
+body {
+  background: #C5CADD;
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+  background: #ED2A55;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  margin-right: 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.tool {
+  padding: 10px 0;
+}
+
+.list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list li {
+  margin-bottom: 10px;
+}
+
+.card-footer {
+  text-align: right;
+}
+
+.alert {
+  text-transform: uppercase;
+}
+
+.tasks-manager {
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.add-task {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.form-actions button {
+  margin: 0 5px;
+  width: 100%;
+}
