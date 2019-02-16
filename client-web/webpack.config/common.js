@@ -3,7 +3,6 @@
 const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ManifestPlugin = require('webpack-manifest-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -18,7 +17,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(PROJECT_PATH, "static"),
-    filename: "js/[name].js",
+    filename: "js/[name].[hash].js",
   },
   module: {
     rules: [

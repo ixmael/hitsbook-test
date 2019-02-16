@@ -1,10 +1,15 @@
 "use strict";
 
+const path = require('path');
 const merge = require("webpack-merge");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const BundleTracker  = require('webpack-bundle-tracker');
 
 const common = require("./common");
+
+const BASE_PATH = process.cwd();
+const PROJECT_PATH = path.resolve(BASE_PATH, '..');
 
 const production = {
   mode: "production",
@@ -18,6 +23,9 @@ const production = {
       new OptimizeCSSAssetsPlugin({})
     ]
   },
+  plugins: [
+    new BundleTracker({path: PROJECT_PATH, filename: './webpack-stats.json'})
+  ]
 };
 
 module.exports = merge(common, production);

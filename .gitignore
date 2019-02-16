@@ -4,6 +4,7 @@
 !/static/.gitkeep
 /data
 !/data/.gitkeep
+webpack-stats.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
